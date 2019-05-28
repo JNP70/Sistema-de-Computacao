@@ -1,0 +1,56 @@
+INSERT INTO departamento(dnome, dnumero, cpf_gerente, data_inicio_gerente) VALUES 
+('Pesquisa','5', null, null),
+('Administração','4', null, null),
+('Matriz','1', null, null);
+
+INSERT INTO funcionario(pnome, minicial, unome, cpf, datanasc, endereco, sexo, salario, cpf_supervisor, dnr) VALUES 
+('James', 'E', 'Borg', '88866555576', '10-11-1937', '450 Stones, Houston, TX', 'M', 5500, null, 1),
+('Jennifer', 'S', 'Wallace', '98765432168', '20-06-1941', '291 Berry, Bellaire, TX', 'F', 4300, '88866555576', 4),
+('Franklin', 'T', 'Wong', '33344555587', '08-12-1955', '638 Voss, Houston, TX', 'M', 4000, '88866555576', 5),
+('John', 'B', 'Smith', '12345678966', '09-01-1965','731 Fondren, Houston, TX', 'M', 3000, '33344555587', 5),
+('Ramesh', 'K', 'Narayan', '66688444476', '15-09-1962','975 Fire Oak, Humble, TX', 'M', 3800, '33344555587', 5),
+('Joice', 'A', 'English', '45345345376', '31-07-1976','5631 Rice Houston, TX', 'F', 2500, '33344555587', 5),
+('Alice', 'J', 'Zelaya', '99988777767', '10-01-1968','3321 Castle, Spring, TX', 'F', 2500, '98765432168', 4),
+('Ahmad', 'V', 'Jabar', '98798798733', '29-03-1969','980 Dallas, Houston, TX', 'M', 2500, '98765432168', 4);
+
+
+INSERT INTO projeto(projnome, projnumero, projlocal, dnum) VALUES
+('ProdutoX', 1, 'Bellaire', 5),
+('ProdutoY', 2, 'Sugarland', 5),
+('ProdutoZ', 3, 'Houston', 5),
+('Informatização', 10, 'Stafford', 4),
+('Reorganização', 20, 'Houston', 1),
+('Qualidade', 30, 'Stafford', 4);
+
+
+INSERT INTO public.dependente(fcpf, nome_dependente, sexo, datanasc, parentesco) VALUES
+('33344555587', 'Alice', 'F', '05-04-1986', 'Filha'),
+('33344555587', 'Theodore', 'M', '25-10-1983', 'Filho'),
+('33344555587', 'Joy', 'F', '03-05-1958', 'Conjuge'),
+('98765432168', 'Abner', 'M', '28-02-1942', 'Conjuge'),
+('12345678966', 'Michael', 'M', '04-01-1988', 'Filho'),
+('12345678966', 'Alice', 'F', '30-12-1988', 'Filha'),
+('12345678966', 'Elizabeth', 'F', '05-05-1967', 'Conjuge');
+
+INSERT INTO localizacao_dep(dnumero, dlocal) values
+(1, 'Houston'),
+(4, 'Stafford'),
+(5, 'Bellaire'),
+(5, 'Sugarland'),
+
+INSERT INTO trabalha_em(fcpf, projnumero, horas) VALUES 
+('12345678966', 1, 32.5),
+('12345678966', 2, 7.5),
+('66688444476', 3, 40.0),
+('45345345376', 1, 20.0),
+('45345345376', 2, 20.0),
+('33344555587', 2, 10.0),
+('33344555587', 3, 10.0),
+('33344555587', 10, 10.0),
+('33344555587', 20, 10.0),
+('99988777767', 30, 30.0),
+('99988777767', 10, 10.0),
+('98798798733', 10, 35.0),
+('98798798733', 30, 5.0),
+('98765432168', 30, 20.0),
+('98765432168', 20, 15.0),

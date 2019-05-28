@@ -1,0 +1,46 @@
+create table Cliente(
+cpf varchar(14) not null,
+cnome varchar not null,
+endereco varchar not null,
+email varchar not null,
+primary key (cpf));
+
+create table Produto(
+codigop varchar not null,
+descricaop varchar not null,
+tipop varchar not null,
+precop float not null,
+primary key (codigop)
+foreign key(codigop) references Cliente(cpf);
+
+create table Pet(
+codigo varchar not null,
+nome varchar not null,
+tipo varchar not null,
+primary key(codigo),
+foreign key(codigo) references Cliente(cpf));
+
+create table Atendimento(
+codigoa varchar not null,
+descricao varchar not null,
+data date not null,
+hora time not null,
+comentario varchar not null,
+primary key(codigoa)
+foreign key(codigo) references Agendamento(codigo_at));
+
+create table funcionario(
+nomef varchar not null,
+codigof varchar not null,
+primary key(codigof));
+
+create table Agendamento(
+codigo_f varchar not null,
+	codigo_pet varchar not null,
+	codigo_at varchar not null,
+data_ag date not null,
+hora_ag time not null,
+primary key (codigof),
+foreign key (codigo_pet) references Pet(codigo),
+foreign key (codigo_at) references Atentedimento(codigoa),
+foreign key(codigo_f) references Funcionario(codigof));
